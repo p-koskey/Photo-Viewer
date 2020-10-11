@@ -18,3 +18,6 @@ check:
 	
 collectstatic:
 	python manage.py collectstatic
+
+test:
+	python manage.py test $(app) 
