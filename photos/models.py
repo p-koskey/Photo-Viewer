@@ -38,7 +38,12 @@ class Photos(models.Model):
     locationtags = models.ManyToManyField(Location)
     image = CloudinaryField('image')
     date = models.DateTimeField(auto_now_add=True)
-    
+
+    @classmethod
+    def search_by_category(cls, category):
+        photos = cls.objects.filter(categorytags__name__icontains=category)
+        return photos
+        
     @classmethod
     def update_photo(cls, id, value):
         cls.objects.filter(id=id).update(photo=value)
@@ -49,14 +54,9 @@ class Photos(models.Model):
         return photo
 
     @classmethod
-    def search_by_category(cls, category):
-        photos = cls.objects.filter(categorytags__name__icontains=category)
-        return photos
-
-    @classmethod
     def filter_by_location(cls, location):
         photo_location = Photos.objects.filter(locationtags__name=location).all()
-        return image_location
+        return photo_location
 
     def __str__(self):
         return self.name
