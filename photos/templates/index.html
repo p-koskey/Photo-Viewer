@@ -27,8 +27,11 @@
                 <img src="{{image.image.url}}" class="card-img-top" alt="{{image.caption}}" height='100%'width='100%'>
             </div>
             <div class="modal-footer">
+            <input type="text" id="photolink" class="form-control input-sm" value="{{image.image.url}}"
+                    class="hidden d-none">
+                <button type="button" class="btn btn-primary" onclick="copyFn('photolink')">Copy Image Link</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Copy Image Link</button>
+                
             </div>
             </div>
         </div>
