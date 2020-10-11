@@ -20,8 +20,13 @@
     
             <div class="card-body">
                 <h5 class="card-text float-left">{{image.name}}</h5>
+                 <a class="text-secondary float-right" href="location/{{image.locationtags.all|join:", "}}">
                 <h6 class="text-secondary float-right"><i class="fas fa-map-marker-alt"></i> : {{image.locationtags.all|join:", "}}</h6>
+                </a> 
+                
             </div>
+            <p class="ml-3" style="color: #F5CCD4;"><i class="far fa-clone"></i>: {{image.categorytags.all|join:", "}}</p>
+
            </div>
                           <!-- Modal -->
         <div class="modal fade" id="{{image.image}}" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true" >

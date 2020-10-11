@@ -1,21 +1,50 @@
 {%extends 'base.html'%} 
 {% block content %}
-<div class="container">
-
-  <div class="row">
-<div class=' d-flex flex-wrap justify-content-center'>
-  {% if locationimages %}
+{{block.super}}
+<div class='container-fluid '>
+  {% if images %}
+  
     {% for image in images %}
-           <div class="card col-lg-3 col-md-6 mt-2 p-2">
+            <div> <strong><h2 class="text-center m-2">{{image.locationtags.all|join:", "}}</h2></strong><br></div>
+            <span></span>
+            <div class='d-flex flex-wrap justify-content-center'>
+           <div class="card col-lg-3 col-md-6 mt-3 p-2">
             <img src="{{image.image.url}}" class="card-img-top" alt="{{image.name}}" height='300' width='100%' data-toggle="modal" data-target="#{{image.image}}">
     
             <div class="card-body">
                 <p class="card-text">{{image.name}}</p>
             </div>
            </div>
+
+           <div class="modal fade" id="{{image.image}}" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true" >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" >
+            <div class="modal-header">
+                <h5 class="modal-title" id="imageModalLabel">{{image.name}}</h5>
+                
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                
+            </div>
+            <div class="modal-body">
+            
+                <img src="{{image.image.url}}" class="card-img-top" alt="{{image.description}}" height='400'width='100%'>
+                
+                <h6 class="text-secondary mt-2" >{{image.description}} <br> {{image.date|date}}</h6>
+            </div>
+            <div class="modal-footer">
+            <input type="text" id="photolink" class="form-control input-sm" value="{{image.image.url}}"
+                    class="hidden d-none">
+                <button type="button" class="btn " onclick="copyFn('photolink')" style="background-color: #F5CCD4";>Copy Image Link</button>
+                
+            </div>
+            </div>
+        </div>
+        </div> 
+        </div>
     {% endfor %}
   {% endif %}
   </div>
-  </div>
-</div>
+
 {% endblock %}
