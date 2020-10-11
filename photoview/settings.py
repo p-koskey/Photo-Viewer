@@ -129,3 +129,9 @@ STATICFILES_DIRS = [
 ]
 TIME_ZONE = 'Africa/Nairobi'
 
+#Cloudinary initialization
+cloudinary.config(
+    cloud_name= os.environ.get('CLOUD_NAME'),
+    api_key=os.environ.get('API_KEY'),
+    api_secret=os.environ.get('API_SECRET')
+)
