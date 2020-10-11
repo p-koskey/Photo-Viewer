@@ -1,0 +1,30 @@
+{%extends 'base.html'%} 
+{% block content %}
+<div class="container">
+
+  <div class="row">
+    {% if photos%}
+      <h2 class='text-center'>Found {{ photos|length }} of searched term {{message}}</h2>
+    {% else %}
+      <h2 class='text-center'> Found 0 photos for the search term {{message}}</h2>
+    {% endif %}
+
+  </div>
+
+  <div class="row">
+<div class=' d-flex flex-wrap justify-content-center'>
+  {% if photos %}
+    {% for image in photos %}
+           <div class="card col-lg-3 col-md-6 mt-2 p-2">
+            <img src="{{image.image.url}}" class="card-img-top" alt="{{image.name}}" height='300' width='100%' data-toggle="modal" data-target="#{{image.image}}">
+    
+            <div class="card-body">
+                <p class="card-text">{{image.name}}</p>
+            </div>
+           </div>
+    {% endfor %}
+  {% endif %}
+  </div>
+  </div>
+</div>
+{% endblock %}

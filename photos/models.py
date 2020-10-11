@@ -43,7 +43,7 @@ class Photos(models.Model):
     def search_by_category(cls, category):
         photos = cls.objects.filter(categorytags__name__icontains=category)
         return photos
-        
+
     @classmethod
     def update_photo(cls, id, value):
         cls.objects.filter(id=id).update(photo=value)
