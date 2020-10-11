@@ -8,7 +8,7 @@
             <div> <strong><h2 class="text-center m-2">{{image.locationtags.all|join:", "}}</h2></strong><br></div>
             <span></span>
             <div class='d-flex flex-wrap justify-content-center'>
-           <div class="card col-lg-3 col-md-6 mt-3 p-2">
+           <div class="card col-lg-3 col-md-8 mt-3 p-2">
             <img src="{{image.image.url}}" class="card-img-top" alt="{{image.name}}" height='300' width='100%' data-toggle="modal" data-target="#{{image.image}}">
     
             <div class="card-body">
@@ -16,7 +16,7 @@
             </div>
            </div>
 
-           <div class="modal fade" id="{{image.image}}" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true" >
+        <div class="modal fade" id="{{image.image}}" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true" >
         <div class="modal-dialog" role="document">
             <div class="modal-content" >
             <div class="modal-header">
