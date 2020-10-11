@@ -18,6 +18,12 @@ class Category(models.Model):
 class Location(models.Model):
     cityname = models.CharField(max_length =30)
 
+    @classmethod
+    def get_locations(cls):
+        locations = Location.objects.all()
+        return locations
+
+    @classmethod
     def update_location(cls, id, value):
         cls.objects.filter(id=id).update(cityname=value)
 
@@ -55,7 +61,7 @@ class Photos(models.Model):
 
     @classmethod
     def filter_by_location(cls, location):
-        photo_location = Photos.objects.filter(locationtags__name=location).all()
+        photo_location = Photos.objects.filter(locationtags__cityname=location).all()
         return photo_location
 
     def __str__(self):

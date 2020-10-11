@@ -10,5 +10,5 @@ function copyFn() {
        document.execCommand("copy");
      
        /* Alert the copied text */
-       alert("Image link copied successfully");
+       alert("Image link copied");
      }
