@@ -14,14 +14,14 @@ class PhotoTestClass(TestCase):
         self.newLocation = Location(cityname='Nairobi')
         self.newLocation.save_location()
         
-        self.newImage = Photos(name = 'Canoeing',caption = 'Love trees',categorytags=self.newCategory,locationtags=self.newLocation,image='gzxzdfhashdfhas')
-        
+        self.newImage = Photos(name = 'Canoeing',description = 'Love trees',image='gzxzdfhashdfhas')
+
         self.newImage.save_photo()
 
        
 
     def test_instance(self):
-        self.assertTrue(isinstance(self.newImage, Image))
+        self.assertTrue(isinstance(self.newImage, Photos))
 
     def tearDown(self):
         Photos.objects.all().delete()
