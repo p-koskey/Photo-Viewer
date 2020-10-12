@@ -1,6 +1,6 @@
+htmlcov/
 venv/
 .env
 env.sh
 .vscode
 __pycache__/
-htmlcov/
