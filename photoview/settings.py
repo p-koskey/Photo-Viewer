@@ -141,13 +141,11 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# Configure Django App for Heroku.
-django_heroku.settings(locals())
 TIME_ZONE = 'Africa/Nairobi'
 
 #Cloudinary initialization
 cloudinary.config(
-    cloud_name= os.environ.get('CLOUD_NAME'),
+    cloud_name= os.environ.get('Cheroku logs --tailLOUD_NAME'),
     api_key=os.environ.get('API_KEY'),
     api_secret=os.environ.get('API_SECRET')
 )
