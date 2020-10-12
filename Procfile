@@ -1,1 +1,1 @@
-web: gunicorn photoview.wsgi --log-file-
+web: gunicorn photoview.wsgi
