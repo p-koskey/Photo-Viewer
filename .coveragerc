@@ -1,0 +1,9 @@
+[run]
+omit = 
+    */venv/*
+    */migrations/*
+    *tests*
+
+[report]
+exclude_lines=
+    __str__

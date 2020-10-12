@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'photos',
     'bootstrap4',
     'fontawesome_5',
+    'coverage',
 ]
 
 MIDDLEWARE = [
