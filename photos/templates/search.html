@@ -18,7 +18,7 @@
     
             <div class="card-body">
                 <p class="card-text float-left">{{image.name}}</p>
-                <a class="text-secondary float-right" href="location/{{image.locationtags.all|join:", "}}">
+                <a class="text-secondary float-right" href="/location/{{image.locationtags.all|join:", "}}">
                 <h6 class="text-secondary float-right"><i class="fas fa-map-marker-alt"></i> : {{image.locationtags.all|join:", "}}</h6>
                 </a> 
             </div>
