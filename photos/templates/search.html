@@ -17,7 +17,10 @@
             <img src="{{image.image.url}}" class="card-img-top" alt="{{image.name}}" height='300' width='100%' data-toggle="modal" data-target="#{{image.image}}">
     
             <div class="card-body">
-                <p class="card-text">{{image.name}}</p>
+                <p class="card-text float-left">{{image.name}}</p>
+                <a class="text-secondary float-right" href="location/{{image.locationtags.all|join:", "}}">
+                <h6 class="text-secondary float-right"><i class="fas fa-map-marker-alt"></i> : {{image.locationtags.all|join:", "}}</h6>
+                </a> 
             </div>
            </div>
             <div class="modal fade" id="{{image.image}}" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true" >
