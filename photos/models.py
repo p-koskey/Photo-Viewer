@@ -43,7 +43,7 @@ class Location(models.Model):
 
 class Photos(models.Model):
     name = models.CharField(max_length =30)
-    description = models.CharField(max_length =60)
+    description = models.CharField(max_length =100)
     categorytags = models.ManyToManyField(Category)
     locationtags = models.ManyToManyField(Location)
     image = CloudinaryField('image')

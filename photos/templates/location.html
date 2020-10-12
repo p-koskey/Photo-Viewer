@@ -3,12 +3,11 @@
 {{block.super}}
 <div class='container-fluid '>
   {% if images %}
-  
+    <div> <strong><h2 class="text-center m-2">{{location}}</h2></strong><br></div>
+     <div class='d-flex flex-wrap justify-content-center'>
     {% for image in images %}
-            <div> <strong><h2 class="text-center m-2">{{image.locationtags.all|join:", "}}</h2></strong><br></div>
-            <span></span>
-            <div class='d-flex flex-wrap justify-content-center'>
-           <div class="card col-lg-3 col-md-8 mt-3 p-2">
+          
+           <div class="card col-lg-3 col-md-8 m-2 p-2 shadow-sm">
             <img src="{{image.image.url}}" class="card-img-top" alt="{{image.name}}" height='300' width='100%' data-toggle="modal" data-target="#{{image.image}}">
     
             <div class="card-body">
@@ -42,8 +41,9 @@
             </div>
         </div>
         </div> 
-        </div>
+        
     {% endfor %}
+    </div>
   {% endif %}
   </div>
 
