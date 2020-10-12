@@ -6,8 +6,9 @@ import datetime as dt
 class Category(models.Model):
     name = models.CharField(max_length =30)
 
-    def update_category(cls, id, value):
-        cls.objects.filter(id=id).update(name=value)
+    @classmethod
+    def update_category(cls, pk, category):
+        cls.objects.filter(pk=pk).update(name=category)
 
     def __str__(self):
         return self.name
@@ -27,8 +28,8 @@ class Location(models.Model):
         return locations
 
     @classmethod
-    def update_location(cls, id, value):
-        cls.objects.filter(id=id).update(cityname=value)
+    def update_location(cls, pk, city):
+        cls.objects.filter(pk=pk).update(cityname=city)
 
     def __str__(self):
         return self.cityname

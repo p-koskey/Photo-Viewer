@@ -70,6 +70,13 @@ class CategoryTestClass(TestCase):
         category = Category.objects.all()
         self.assertTrue(len(category) > 0)
 
+    def test_update_category(self):
+        new_category = 'Travel'
+        self.category.update_category(self.category.pk, new_category)
+        newcategory = Category.objects.filter(name='Travel')
+        self.assertTrue(len(newcategory) > 0)
+    
+
     def test_delete_category(self):
         self.category.delete_category()
         category = Category.objects.all()
