@@ -13,7 +13,7 @@
 <div class=' d-flex flex-wrap justify-content-center'>
   {% if photos %}
     {% for image in photos %}
-           <div class="col-lg-3 col-md-8 m-2 p-2 shadow-sm">
+           <div class="card col-lg-3 col-md-8 m-2 p-2 shadow-sm">
             <img src="{{image.image.url}}" class="card-img-top" alt="{{image.name}}" height='300' width='100%' data-toggle="modal" data-target="#{{image.image}}">
     
             <div class="card-body">
