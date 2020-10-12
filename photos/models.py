@@ -52,7 +52,7 @@ class Photos(models.Model):
 
     @classmethod
     def update_photo(cls, id, value):
-        cls.objects.filter(id=id).update(photo=value)
+        cls.objects.filter(id=id).update(image=value)
 
     @classmethod
     def get_photo_by_id(cls, id):
