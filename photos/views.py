@@ -25,4 +25,4 @@ def locationimages(request,location):
 
     locationimages = Photos.filter_by_location(location)
     message = location
-    return render(request, 'location.html', {'images': locationimages,'location':location})
+    return render(request, 'location.html', {'images': locationimages,'location':message})

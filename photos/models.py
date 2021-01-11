@@ -20,6 +20,7 @@ class Category(models.Model):
         self.delete()
 
 class Location(models.Model):
+
     cityname = models.CharField(max_length =30)
 
     @classmethod
