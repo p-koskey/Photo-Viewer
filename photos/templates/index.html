@@ -1,17 +1,7 @@
 {%extends 'base.html'%}   
 {% block content %}
 {{block.super}}
-    <div class="dropdown show m-3">
-  <a class="btn  dropdown-toggle" style="background-color: #F5CCD4" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-   Select Location
-  </a>
 
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-  {% for location in locations %}
-    <a class="dropdown-item" href="location/{{location.cityname}}">{{location.cityname}}</a>
-{% endfor%}
-  </div>
-</div>
     {% if images %}
     <div class='container-fluid d-flex flex-wrap justify-content-center'>
         {% for image in images  %}
@@ -25,7 +15,7 @@
                 </a> 
                 
             </div>
-            <p class="text-secondary ml-3" ><i class="far fa-clone"></i>: {{image.categorytags.all|join:", "}}</p>
+            <p class="text-secondary ml-3" ><i class="fas fa-tags"></i> : {{image.categorytags.all|join:", "}}</p>
 
            </div>
                           <!-- Modal -->

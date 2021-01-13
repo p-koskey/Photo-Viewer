@@ -22,7 +22,7 @@ def search_results(request):
         return render(request, 'search.html',{"message":message})
 
 def locationimages(request,location):
-
+    locations = Location.get_locations()
     locationimages = Photos.filter_by_location(location)
     message = location
-    return render(request, 'location.html', {'images': locationimages,'location':message})
+    return render(request, 'location.html', {'images': locationimages,'location':message,'locations':locations})
